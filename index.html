@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ReSoul | Transformation · Wahrheit · Bewusstsein</title>
+
+  <meta name="description" content="ReSoul – Transformation, Wahrheit und Bewusstsein. Readings, 1:1 Begleitung und Community mit Johanna Hamann.">
+
+  <style>
+    :root {
+      --navy: #03111d;
+      --navy-light: #071d2d;
+      --navy-card: #081a28;
+      --gold: #d7a64a;
+      --gold-light: #f0ca7a;
+      --cream: #f4ead8;
+      --text: #e8e3da;
+      --muted: #aaa69f;
+      --line: rgba(215, 166, 74, 0.32);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 50% 0%, #0a2940 0%, #03111d 38%, #020a11 100%);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .18;
+      background-image:
+        radial-gradient(circle at 15% 20%, #fff 0 1px, transparent 1px),
+        radial-gradient(circle at 72% 12%, #fff 0 1px, transparent 1px),
+        radial-gradient(circle at 40% 45%, #fff 0 1px, transparent 1px),
+        radial-gradient(circle at 88% 55%, #fff 0 1px, transparent 1px);
+      background-size: 210px 210px, 260px 260px, 330px 330px, 400px 400px;
+      z-index: -1;
+    }
+
+    h1, h2, h3, .brand {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(2, 10, 17, .88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      max-width: 1250px;
+      margin: auto;
+      min-height: 74px;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .brand {
+      color: var(--gold-light);
+      font-size: 29px;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .navlinks a {
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 11px;
+      color: #eee7da;
+    }
+
+    .navlinks a:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-button {
+      border: 1px solid var(--gold);
+      border-radius: 100px;
+      padding: 11px 19px !important;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 820px;
+      padding: 75px 24px 90px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 650px;
+      height: 650px;
+      border: 1px solid rgba(215,166,74,.08);
+      border-radius: 50%;
+      left: 50%;
+      top: 48%;
+      transform: translate(-50%,-50%);
+      box-shadow:
+        0 0 100px rgba(215,166,74,.05),
+        inset 0 0 100px rgba(215,166,74,.03);
+    }
+
+    .hero-grid {
+      width: 100%;
+      max-width: 1250px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr .8fr 1fr;
+      align-items: center;
+      gap: 45px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-size: 11px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      color: var(--cream);
+      font-size: clamp(46px, 5.3vw, 78px);
+      line-height: 1.03;
+      margin-bottom: 25px;
+    }
+
+    .hero-copy p {
+      max-width: 520px;
+      color: #d5d2cc;
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 25px;
+      border: 1px solid var(--gold);
+      border-radius: 100px;
+      color: #07111a;
+      background: linear-gradient(135deg, #f0ca7a, #c89236);
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 1.3px;
+      transition: .25s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(215,166,74,.18);
+    }
+
+    .hero-brand {
+      text-align: center;
+      position: relative;
+      z-index: 4;
+    }
+
+    .scorpion {
+      width: min(280px, 90%);
+      margin: auto;
+      display: block;
+      filter: drop-shadow(0 0 22px rgba(215,166,74,.25));
+    }
+
+    .hero-brand h2 {
+      color: var(--gold-light);
+      font-size: 58px;
+      margin-top: -5px;
+      line-height: 1;
+    }
+
+    .tagline {
+      margin-top: 20px;
+      color: var(--gold-light);
+      font-size: 10px;
+      line-height: 1.8;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .hero-right {
+      border-left: 1px solid var(--gold);
+      padding-left: 35px;
+      max-width: 280px;
+      justify-self: end;
+    }
+
+    .hero-right strong {
+      display: block;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      line-height: 1.8;
+      font-size: 12px;
+      margin-bottom: 30px;
+    }
+
+    .hero-right p {
+      color: var(--muted);
+      font-family: Georgia, serif;
+      font-size: 20px;
+      font-style: italic;
+    }
+
+    /* JOURNEY */
+
+    .journey {
+      max-width: 1250px;
+      margin: auto;
+      padding: 55px 24px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .journey-item {
+      text-align: center;
+      padding: 20px;
+      border-right: 1px solid var(--line);
+    }
+
+    .journey-item:last-child {
+      border-right: none;
+    }
+
+    .symbol {
+      color: var(--gold-light);
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .journey-item h3 {
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 15px;
+      margin-bottom: 7px;
+    }
+
+    .journey-item p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* GENERIC */
+
+    section {
+      position: relative;
+    }
+
+    .section-inner {
+      max-width: 1250px;
+      margin: auto;
+      padding: 95px 24px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-title h2 {
+      color: var(--cream);
+      font-size: clamp(38px, 5vw, 58px);
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 10px;
+    }
+
+    /* OFFERS */
+
+    #angebote {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(0,0,0,.13);
+    }
+
+    .offer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .offer-card {
+      background:
+        linear-gradient(180deg, rgba(13,36,52,.95), rgba(4,17,27,.98));
+      border: 1px solid var(--line);
+      padding: 38px;
+      min-height: 410px;
+      display: flex;
+      flex-direction: column;
+      transition: .25s;
+    }
+
+    .offer-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(215,166,74,.65);
+    }
+
+    .offer-icon {
+      color: var(--gold-light);
+      font-size: 37px;
+      margin-bottom: 35px;
+    }
+
+    .offer-card h3 {
+      color: var(--cream);
+      font-size: 29px;
+      margin-bottom: 10px;
+    }
+
+    .offer-card > p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .offer-card ul {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+
+    .offer-card li {
+      margin: 8px 0;
+      color: #d8d3cb;
+    }
+
+    .offer-card li::before {
+      content: "✦";
+      color: var(--gold);
+      margin-right: 10px;
+    }
+
+    .offer-card .button {
+      margin-top: auto;
+      text-align: center;
+      background: transparent;
+      color: var(--gold-light);
+    }
+
+    /* COMMUNITY */
+
+    .community {
+      margin-top: 22px;
+      padding: 55px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(rgba(3,17,29,.72), rgba(3,17,29,.93)),
+        url("images/community.jpg") center/cover;
+    }
+
+    .community-content {
+      max-width: 680px;
+    }
+
+    .community h2 {
+      font-size: 43px;
+      color: var(--cream);
+      margin-bottom: 18px;
+    }
+
+    .community p {
+      margin-bottom: 18px;
+      color: #ddd8cf;
+    }
+
+    /* ABOUT */
+
+    #ueber-mich {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .portrait-wrap {
+      position: relative;
+    }
+
+    .portrait {
+      width: 100%;
+      max-width: 450px;
+      display: block;
+      border: 1px solid var(--line);
+    }
+
+    .portrait-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 22px -22px -22px 22px;
+      border: 1px solid rgba(215,166,74,.28);
+      z-index: -1;
+    }
+
+    .about-copy h2 {
+      font-size: clamp(38px, 4vw, 56px);
+      line-height: 1.1;
+      color: var(--cream);
+      margin-bottom: 25px;
+    }
+
+    .about-copy p {
+      color: #cbc8c2;
+      margin-bottom: 18px;
+      max-width: 680px;
+    }
+
+    .quote {
+      margin: 35px 0;
+      padding-left: 25px;
+      border-left: 1px solid var(--gold);
+      color: var(--gold-light) !important;
+      font-family: Georgia, serif;
+      font-size: 23px;
+      font-style: italic;
+    }
+
+    /* TESTIMONIALS */
+
+    #stimmen {
+      background: rgba(0,0,0,.16);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .testimonial {
+      background: var(--navy-card);
+      border: 1px solid var(--line);
+      padding: 30px;
+    }
+
+    .testimonial p {
+      font-family: Georgia, serif;
+      font-size: 17px;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .stars {
+      color: var(--gold-light);
+      letter-spacing: 3px;
+    }
+
+    /* FINAL CTA */
+
+    .final {
+      text-align: center;
+      padding: 110px 24px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .final h2 {
+      max-width: 850px;
+      margin: 0 auto 35px;
+      color: var(--cream);
+      font-size: clamp(35px, 4vw, 52px);
+    }
+
+    /* FOOTER */
+
+    footer {
+      max-width: 1250px;
+      margin: auto;
+      padding: 55px 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: flex-end;
+    }
+
+    .footer-brand {
+      color: var(--gold-light);
+    }
+
+    .footer-brand .brand {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .footer-brand small {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 12px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 950px) {
+
+      .navlinks {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-copy {
+        order: 2;
+      }
+
+      .hero-brand {
+        order: 1;
+      }
+
+      .hero-right {
+        order: 3;
+        justify-self: center;
+        border-left: none;
+        border-top: 1px solid var(--gold);
+        padding: 30px 0 0;
+      }
+
+      .hero-copy p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .journey {
+        grid-template-columns: 1fr;
+      }
+
+      .journey-item {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .offer-grid,
+      .testimonial-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .portrait {
+        margin: auto;
+      }
+
+      .community {
+        padding: 35px 25px;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 550px) {
+
+      h1 {
+        font-size: 43px;
+      }
+
+      .hero-brand h2 {
+        font-size: 48px;
+      }
+
+      .scorpion {
+        width: 210px;
+      }
+
+      .offer-card {
+        padding: 28px;
+      }
+
+      .section-inner {
+        padding: 70px 18px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+
+    <a class="brand" href="#home">ReSoul</a>
+
+    <div class="navlinks">
+      <a href="#home">Home</a>
+      <a href="#angebote">Readings</a>
+      <a href="#angebote">1:1 Session</a>
+      <a href="#community">Community</a>
+      <a href="#ueber-mich">Über mich</a>
+      <a href="#kontakt">Kontakt</a>
+      <a class="nav-button" href="#angebote">Deinen Weg beginnen →</a>
+    </div>
+
+  </nav>
+</header>
+
+
+<main>
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-grid">
+
+      <div class="hero-copy">
+
+        <div class="eyebrow">
+          Transformation · Wahrheit · Bewusstsein
+        </div>
+
+        <h1>
+          Du weißt längst,<br>
+          dass sich etwas<br>
+          verändern muss.
+        </h1>
+
+        <p>
+          Aber Verstehen allein verändert noch nichts.
+          ReSoul ist ein Raum für tiefe Transformation –
+          für die Muster, Blockaden und inneren Dynamiken,
+          die dich immer wieder an denselben Punkt zurückbringen.
+        </p>
+
+        <a href="#angebote" class="button">
+          Deinen Weg beginnen →
+        </a>
+
+      </div>
+
+
+      <div class="hero-brand">
+
+        <!-- Dein Skorpion-Logo kommt später hier hinein -->
+        <img
+          class="scorpion"
+          src="images/resoul-logo.png"
+          alt="ReSoul Skorpion"
+        >
+
+        <h2>ReSoul</h2>
+
+        <div class="tagline">
+          Remember who you were before<br>
+          the world told you who to be
+        </div>
+
+      </div>
+
+
+      <div class="hero-right">
+
+        <strong>
+          Tiefer<br>
+          Klarer<br>
+          Echter<br>
+          Du
+        </strong>
+
+        <p>
+          Transformation ist kein Ende.
+          Sondern ein Zurück zu dir.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- TRANSFORMATIONSWEG -->
+
+  <section>
+
+    <div class="journey">
+
+      <div class="journey-item">
+        <div class="symbol">☥</div>
+        <h3>Erkennen</h3>
+        <p>Was wirkt in dir?</p>
+      </div>
+
+      <div class="journey-item">
+        <div class="symbol">𓂀</div>
+        <h3>Verstehen</h3>
+        <p>Woher kommen deine Muster?</p>
+      </div>
+
+      <div class="journey-item">
+        <div class="symbol">◯</div>
+        <h3>Lösen</h3>
+        <p>Was hält dich noch fest?</p>
+      </div>
+
+      <div class="journey-item">
+        <div class="symbol">☀</div>
+        <h3>Verkörpern</h3>
+        <p>Wie lebst du das, was du erkannt hast?</p>
+      </div>
+
+      <div class="journey-item">
+        <div class="symbol">✦</div>
+        <h3>Verbinden</h3>
+        <p>Gemeinsam wachsen.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ANGEBOTE -->
+
+  <section id="angebote">
+
+    <div class="section-inner">
+
+      <div class="section-title">
+
+        <h2>Wie möchtest du beginnen?</h2>
+
+        <p>Drei Wege. Ein Ziel: Du.</p>
+
+      </div>
+
+
+      <div class="offer-grid">
+
+        <article class="offer-card">
+
+          <div class="offer-icon">𓂀</div>
+
+          <h3>Readings</h3>
+
+          <p>
+            Erkenne, was unter der Oberfläche wirkt.
+          </p>
+
+          <ul>
+            <li>Grundenergien Reading</li>
+            <li>Essence Reading</li>
+            <li>Paardynamik</li>
+          </ul>
+
+          <a href="#" class="button">
+            Readings entdecken →
+          </a>
+
+        </article>
+
+
+        <article class="offer-card">
+
+          <div class="offer-icon">✦</div>
+
+          <h3>1:1 Session</h3>
+
+          <p>
+            Wir gehen gemeinsam an den Punkt,
+            an dem du alleine nicht weiterkommst.
+          </p>
+
+          <ul>
+            <li>Blockaden lösen</li>
+            <li>Tiefe Prozesse</li>
+            <li>Persönlicher Raum für dein Thema</li>
+          </ul>
+
+          <a href="#" class="button">
+            1:1 entdecken →
+          </a>
+
+        </article>
+
+
+        <article class="offer-card">
+
+          <div class="offer-icon">☥</div>
+
+          <h3>Community</h3>
+
+          <p>
+            Du musst deinen Weg nicht alleine gehen.
+          </p>
+
+          <ul>
+            <li>Austausch mit Gleichgesinnten</li>
+            <li>Impulse von mir</li>
+            <li>Ankündigungen meiner Lives</li>
+            <li>Fragen & Reflexion</li>
+            <li>Verbindung, die trägt</li>
+          </ul>
+
+          <a href="#community" class="button">
+            Community entdecken →
+          </a>
+
+        </article>
+
+      </div>
+
+
+      <!-- COMMUNITY -->
+
+      <div class="community" id="community">
+
+        <div class="community-content">
+
+          <div class="eyebrow">
+            ReSoul Community
+          </div>
+
+          <h2>
+            Tiefe Verbindung entsteht nicht nur mit dir selbst.
+          </h2>
+
+          <p>
+            ReSoul soll nicht nur ein Ort sein, an dem du ein Reading
+            buchst und danach wieder gehst.
+          </p>
+
+          <p>
+            Es entsteht ein Raum für Menschen, die sich selbst tiefer
+            verstehen, alte Muster durchbrechen und sich mit anderen
+            Menschen verbinden möchten, die ebenfalls bewusst durchs
+            Leben gehen.
+          </p>
+
+          <p>
+            Für echte Gespräche. Neue Perspektiven. Fragen.
+            Erkenntnisse. Und Verbindung.
+          </p>
+
+          <!-- WhatsApp-Link ergänzen wir später -->
+          <a href="#" class="button">
+            Kostenlos beitreten →
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ÜBER MICH -->
+
+  <section id="ueber-mich">
+
+    <div class="section-inner">
+
+      <div class="about-grid">
+
+        <div class="portrait-wrap">
+
+          <!-- Dein echtes Foto -->
+          <img
+            src="images/johanna.jpg"
+            alt="Johanna von ReSoul"
+            class="portrait"
+          >
+
+        </div>
+
+
+        <div class="about-copy">
+
+          <div class="eyebrow">
+            Über mich
+          </div>
+
+          <h2>
+            Ich begleite dich nicht dabei,
+            jemand Neues zu werden.
+          </h2>
+
+          <p>
+            Ich begleite dich dabei, zu erkennen,
+            was dich davon trennt, wirklich du selbst zu sein.
+          </p>
+
+          <p>
+            Ich bin Johanna – und meine Arbeit beginnt dort,
+            wo oberflächliche Antworten nicht mehr ausreichen.
+            Mich interessieren die Muster hinter unseren Entscheidungen,
+            Beziehungen, Ängsten und inneren Blockaden.
+          </p>
+
+          <p>
+            Dabei geht es für mich nicht darum, über Menschen zu stehen
+            oder ihnen zu sagen, wie sie leben sollen.
+            Es geht darum, einen Raum zu schaffen, in dem Wahrheit
+            sichtbar werden darf.
+          </p>
+
+          <p class="quote">
+            „Wahre Kraft entsteht, wenn du beginnst,
+            dir selbst zu begegnen.“
+          </p>
+
+          <a href="#" class="button">
+            Meine Geschichte →
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- STIMMEN -->
+
+  <section id="stimmen">
+
+    <div class="section-inner">
+
+      <div class="section-title">
+
+        <h2>Stimmen aus ReSoul</h2>
+
+        <p>Erfahrungen · Erkenntnisse · Veränderung</p>
+
+      </div>
+
+
+      <div class="testimonial-grid">
+
+        <div class="testimonial">
+
+          <p>
+            „Das Reading hat bei mir so viel in Bewegung gesetzt.
+            Johanna hat Dinge gesehen, die ich selbst zwar gefühlt,
+            aber nie so klar benennen konnte.“
+          </p>
+
+          <div class="stars">★★★★★</div>
+
+        </div>
+
+
+        <div class="testimonial">
+
+          <p>
+            „Ich habe mich so verstanden gefühlt.
+            Die Session war tief, ehrlich und gleichzeitig
+            so heilsam.“
+          </p>
+
+          <div class="stars">★★★★★</div>
+
+        </div>
+
+
+        <div class="testimonial">
+
+          <p>
+            „Ein Raum, in dem ich nicht funktionieren musste,
+            sondern wirklich hinschauen konnte.“
+          </p>
+
+          <div class="stars">★★★★★</div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABSCHLUSS -->
+
+  <section class="final" id="kontakt">
+
+    <div class="eyebrow">
+      ReSoul
+    </div>
+
+    <h2>
+      Vielleicht brauchst du nicht noch eine Antwort.<br>
+      Vielleicht ist es Zeit, dir selbst anders zu begegnen.
+    </h2>
+
+    <a href="#angebote" class="button">
+      Deinen Weg beginnen →
+    </a>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-brand">
+
+    <span class="brand">ReSoul</span>
+
+    <small>
+      by Johanna Hamann
+    </small>
+
+  </div>
+
+
+  <div class="footer-links">
+
+    <a href="#home">Home</a>
+    <a href="#angebote">Readings</a>
+    <a href="#angebote">1:1 Session</a>
+    <a href="#community">Community</a>
+    <a href="#ueber-mich">Über mich</a>
+    <a href="#kontakt">Kontakt</a>
+    <a href="#">Impressum</a>
+    <a href="#">Datenschutz</a>
+
+  </div>
+
+</footer>
+
+</body>
+</html> 
