@@ -116,21 +116,26 @@
        HERO
     ================================= */
 
-    .hero {
-      min-height: 710px;
-      position: relative;
-      display: grid;
-      grid-template-columns: 1fr 1.45fr 1fr;
-      align-items: center;
-      gap: 35px;
-      padding: 70px 5% 60px;
+   .hero {
+  min-height: 720px;
+  position: relative;
 
-      background:
-        radial-gradient(circle at 50% 45%,
-          rgba(18,82,145,.48) 0%,
-          rgba(6,42,80,.42) 26%,
-          rgba(2,15,30,.88) 62%,
-          #020912 100%);
+  display: grid;
+  grid-template-columns: 1fr 1.25fr 1fr;
+  align-items: center;
+  gap: 40px;
+
+  padding: 70px 6% 65px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(1, 7, 15, 0.76) 0%,
+      rgba(2, 13, 27, 0.25) 45%,
+      rgba(1, 7, 15, 0.58) 100%
+    ),
+    url("images/hero-background.png") center center / cover no-repeat;
+} 
     }
 
     /* Sterne */
