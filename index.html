@@ -3,19 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>ReSoul | Transformation · Wahrheit · Bewusstsein</title>
 
   <style>
     :root {
       --night: #020812;
-      --night2: #041426;
+      --night-2: #041426;
       --blue: #082b50;
       --gold: #d9a84e;
       --gold-light: #f0ce82;
       --cream: #f5ecdc;
-      --white: #ffffff;
-      --muted: #b5bdc7;
+      --muted: #b8c0ca;
       --line: rgba(217,168,78,.28);
     }
 
@@ -46,139 +44,80 @@
       text-decoration: none;
     }
 
-    
-/* ==============================
-   NAVIGATION
-================================ */
+    /* =========================
+       NAVIGATION
+    ========================= */
 
-.nav {
-  min-height: 78px;
-  display: flex;
-  align-items: center;
-  padding: 0 6%;
-  gap: 45px;
+    .nav {
+      position: relative;
+      z-index: 50;
+      background: rgba(2, 8, 18, .97);
+      border-bottom: 1px solid rgba(217,168,78,.18);
+    }
 
-  background: rgba(2, 8, 18, 0.97);
-  border-bottom: 1px solid rgba(217,168,78,.18);
+    .nav-inner {
+      max-width: 1180px;
+      min-height: 76px;
+      margin: 0 auto;
+      padding: 0 28px;
 
-  position: relative;
-  z-index: 50;
-}
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
 
-.brand {
-  color: var(--gold-light) !important;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 27px !important;
-  font-weight: normal;
-  text-transform: none !important;
-  letter-spacing: 0 !important;
+    .brand {
+      color: var(--gold-light);
+      font-size: 29px;
+      line-height: 1;
+      white-space: nowrap;
+      margin-right: auto;
+    }
 
-  margin-right: auto;
-  white-space: nowrap;
-}
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+    }
 
-.nav-menu {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 27px;
-}
+    .nav-menu a {
+      color: #e1e4e8;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      transition: .2s ease;
+    }
 
-.nav-menu a {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: .8px;
-  text-transform: uppercase;
-  color: #e1e3e6;
-  white-space: nowrap;
+    .nav-menu a:hover {
+      color: var(--gold-light);
+    }
 
-  transition: .25s;
-}
+    .nav-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 18px;
 
-.nav-menu a:hover {
-  color: var(--gold-light);
-}
+      border: 1px solid rgba(240,206,130,.62);
+      border-radius: 999px;
 
-.nav-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+      color: var(--cream);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      white-space: nowrap;
 
-  padding: 12px 20px;
+      transition: .2s ease;
+    }
 
-  border: 1px solid rgba(240,206,130,.65);
-  border-radius: 30px;
-
-  color: var(--cream);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  white-space: nowrap;
-
-  transition: .25s;
-}
-
-.nav-button:hover {
-  background: var(--gold-light);
-  color: #07101b;
-}
-
-
-/* TABLET */
-
-@media (max-width: 1050px) {
-
-  .nav {
-    gap: 25px;
-    padding: 0 4%;
-  }
-
-  .nav-menu {
-    gap: 17px;
-  }
-
-  .nav-menu a {
-    font-size: 11px;
-  }
-
-  .nav-button {
-    padding: 11px 15px;
-    font-size: 10px;
-  }
-}
-
-
-/* HANDY */
-
-@media (max-width: 800px) {
-
-  .nav {
-    flex-wrap: wrap;
-    justify-content: center;
-
-    padding: 18px 5%;
-    gap: 18px;
-  }
-
-  .brand {
-    width: 100%;
-    text-align: center;
-    margin-right: 0;
-    font-size: 31px !important;
-  }
-
-  .nav-menu {
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 14px 20px;
-  }
-
-  .nav-button {
-    margin-top: 3px;
-  }
-
+    .nav-button:hover {
+      background: var(--gold-light);
+      color: #07101b;
+    }
 
     /* =========================
        HERO
@@ -187,19 +126,41 @@
     .hero {
       min-height: 720px;
       position: relative;
+      overflow: hidden;
 
       display: grid;
-      grid-template-columns: 1fr 1.2fr 1fr;
+      grid-template-columns: 1fr 1.12fr .9fr;
       align-items: center;
-      gap: 40px;
+      gap: 38px;
 
-      padding: 70px 6%;
+      padding: 68px 6%;
+      background: #020812;
+    }
 
-    background-image: url("./images/hero-background.png") !important;
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
- }
+    /* ECHTES BILD: nicht mehr als CSS-Hintergrund */
+    .hero-background {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(1,7,15,.68) 0%,
+          rgba(1,7,15,.16) 48%,
+          rgba(1,7,15,.55) 100%
+        );
+      pointer-events: none;
+    }
 
     .hero-left,
     .hero-center,
@@ -209,136 +170,126 @@
     }
 
     .eyebrow {
-      color: var(--gold);
-      font-size: 11px;
-      letter-spacing: 4px;
+      color: var(--gold-light);
+      font-size: 12px;
+      letter-spacing: 3px;
       text-transform: uppercase;
       margin-bottom: 18px;
     }
 
     .hero h1 {
-      font-size: clamp(42px, 4vw, 64px);
-      line-height: 1.03;
       max-width: 470px;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
+      font-size: clamp(42px, 4vw, 60px);
+      line-height: 1.04;
     }
 
     .gold-line {
-      width: 55px;
+      width: 56px;
       height: 1px;
+      margin-bottom: 20px;
       background: var(--gold);
-      margin-bottom: 22px;
     }
 
     .hero-lead {
+      max-width: 470px;
+      margin-bottom: 12px;
       color: var(--gold-light);
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 24px;
-      line-height: 1.45;
-      margin-bottom: 13px;
-      max-width: 420px;
+      font-size: 23px;
+      line-height: 1.42;
     }
 
     .hero-copy {
-      max-width: 430px;
-      color: #d5d9df;
-      font-size: 17px;
-      line-height: 1.7;
+      max-width: 480px;
       margin-bottom: 28px;
+      color: #eef0f3;
+      font-size: 17px;
+      line-height: 1.66;
     }
 
     .button {
       display: inline-block;
       padding: 14px 25px;
-      border-radius: 50px;
+      border-radius: 999px;
 
-      background: linear-gradient(
-        135deg,
-        #efd087,
-        #c6933d
-      );
-
+      background: linear-gradient(135deg, #f0d18a, #c6943f);
       color: #07101b;
+
       font-size: 11px;
-      font-weight: bold;
-      letter-spacing: 2px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
       text-transform: uppercase;
-      transition: .25s;
+
+      transition: .2s ease;
     }
 
     .button:hover {
       transform: translateY(-2px);
     }
 
-    /* LOGO */
-
     .hero-center {
-      display: flex;
-      justify-content: center;
-      align-items: center;
       min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .logo-wrap {
-      width: min(480px, 100%);
+      width: min(450px, 100%);
       aspect-ratio: 1 / 1;
-
       display: flex;
-      justify-content: center;
       align-items: center;
-
-      border-radius: 50%;
+      justify-content: center;
       position: relative;
     }
 
     .logo-wrap::before {
       content: "";
       position: absolute;
-      width: 88%;
-      height: 88%;
-      border: 1px solid rgba(217,168,78,.38);
+      width: 86%;
+      height: 86%;
+      border: 1px solid rgba(217,168,78,.34);
       border-radius: 50%;
       box-shadow:
-        0 0 45px rgba(10,75,135,.25),
-        inset 0 0 50px rgba(10,75,135,.15);
+        0 0 55px rgba(13,89,160,.24),
+        inset 0 0 50px rgba(13,89,160,.12);
     }
 
     .logo-image {
-      width: 82%;
-      max-height: 470px;
+      width: 80%;
+      max-height: 450px;
       object-fit: contain;
       position: relative;
-      z-index: 3;
-      filter: drop-shadow(0 0 24px rgba(217,168,78,.25));
+      z-index: 2;
+      filter: drop-shadow(0 0 24px rgba(217,168,78,.26));
     }
-
-    /* HERO RECHTS */
 
     .hero-right {
       justify-self: end;
-      max-width: 270px;
-      padding-left: 30px;
+      max-width: 280px;
+      padding-left: 28px;
       border-left: 1px solid var(--gold);
     }
 
     .identity {
-      font-size: 13px;
-      letter-spacing: 6px;
-      line-height: 2.25;
+      margin-bottom: 22px;
+      font-size: 14px;
+      letter-spacing: 5px;
+      line-height: 2.12;
       text-transform: uppercase;
-      margin-bottom: 25px;
     }
 
     .hero-quote {
-      font-family: Georgia, "Times New Roman", serif;
-      font-style: italic;
       color: var(--gold-light);
-      font-size: 18px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 19px;
+      font-style: italic;
       line-height: 1.5;
     }
 
     /* =========================
-       ALLGEMEINE SEKTIONEN
+       ALLGEMEIN
     ========================= */
 
     section {
@@ -346,24 +297,24 @@
     }
 
     .section-label {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 11px;
       margin-bottom: 17px;
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
     }
 
     .section-title {
+      margin-bottom: 22px;
       font-size: clamp(34px, 4vw, 54px);
       line-height: 1.1;
-      margin-bottom: 22px;
     }
 
     .section-text {
-      color: var(--muted);
-      line-height: 1.8;
       max-width: 680px;
+      color: var(--muted);
       font-size: 15px;
+      line-height: 1.8;
     }
 
     /* =========================
@@ -373,11 +324,7 @@
     .journey {
       text-align: center;
       background:
-        radial-gradient(
-          circle at 50% 50%,
-          rgba(7,48,89,.55),
-          transparent 55%
-        ),
+        radial-gradient(circle at 50% 50%, rgba(8,58,108,.55), transparent 58%),
         var(--night);
     }
 
@@ -386,29 +333,29 @@
     }
 
     .journey-grid {
-      max-width: 1100px;
+      max-width: 1150px;
       margin: auto;
-
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 18px;
     }
 
     .journey-step {
-      padding: 35px 15px;
+      padding: 34px 14px;
       border-top: 1px solid var(--line);
     }
 
     .journey-symbol {
+      min-height: 45px;
+      margin-bottom: 15px;
       color: var(--gold-light);
       font-family: Georgia, serif;
-      font-size: 30px;
-      margin-bottom: 18px;
+      font-size: 31px;
     }
 
     .journey-step h3 {
-      font-size: 20px;
       margin-bottom: 10px;
+      font-size: 20px;
     }
 
     .journey-step p {
@@ -434,8 +381,8 @@
       max-width: 850px;
       margin: 55px auto 0;
 
-      font-family: Georgia, serif;
       color: var(--gold-light);
+      font-family: Georgia, serif;
       font-size: clamp(25px, 3vw, 38px);
       line-height: 1.4;
     }
@@ -445,17 +392,12 @@
     ========================= */
 
     .offers {
-      background:
-        linear-gradient(
-          180deg,
-          #020812,
-          #06172a
-        );
+      background: linear-gradient(180deg, #020812, #06172a);
     }
 
     .offers-head {
-      text-align: center;
       margin-bottom: 55px;
+      text-align: center;
     }
 
     .offers-head .section-text {
@@ -465,7 +407,6 @@
     .offer-grid {
       max-width: 1150px;
       margin: auto;
-
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
@@ -475,19 +416,14 @@
       min-height: 370px;
       padding: 38px 30px;
 
-      border: 1px solid var(--line);
-      background:
-        linear-gradient(
-          145deg,
-          rgba(11,42,72,.72),
-          rgba(3,13,25,.9)
-        );
-
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
 
-      transition: .3s;
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(11,42,72,.72), rgba(3,13,25,.92));
+
+      transition: .25s ease;
     }
 
     .offer-card:hover {
@@ -496,29 +432,29 @@
     }
 
     .offer-number {
-      color: var(--gold);
-      letter-spacing: 3px;
-      font-size: 11px;
       margin-bottom: auto;
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 3px;
     }
 
     .offer-card h3 {
-      font-size: 30px;
       margin-bottom: 15px;
+      font-size: 30px;
     }
 
     .offer-card p {
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 14px;
       margin-bottom: 22px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
     }
 
     .text-link {
       color: var(--gold-light);
-      text-transform: uppercase;
-      letter-spacing: 2px;
       font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     /* =========================
@@ -526,29 +462,25 @@
     ========================= */
 
     .community {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
       min-height: 650px;
       padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       background: #030b15;
     }
 
     .community-image {
       min-height: 650px;
       background:
-        linear-gradient(
-          90deg,
-          rgba(2,8,18,.05),
-          rgba(2,8,18,.55)
-        ),
+        linear-gradient(90deg, rgba(2,8,18,.04), rgba(2,8,18,.48)),
         url("images/community.png") center / cover no-repeat;
     }
 
     .community-content {
+      padding: 80px 10%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 80px 10%;
     }
 
     .community-content .section-text {
@@ -566,18 +498,14 @@
       align-items: center;
 
       background:
-        radial-gradient(
-          circle at 20% 50%,
-          rgba(10,57,101,.35),
-          transparent 42%
-        ),
+        radial-gradient(circle at 20% 50%, rgba(10,57,101,.35), transparent 42%),
         #020812;
     }
 
     .about-image-wrap {
-      position: relative;
       max-width: 450px;
       margin: auto;
+      position: relative;
     }
 
     .about-image {
@@ -599,25 +527,21 @@
     }
 
     /* =========================
-       FINAL CTA
+       ABSCHLUSS
     ========================= */
 
     .final {
-      text-align: center;
       padding: 120px 7%;
+      text-align: center;
 
       background:
-        radial-gradient(
-          circle at 50% 50%,
-          rgba(9,63,113,.45),
-          transparent 48%
-        ),
+        radial-gradient(circle at 50% 50%, rgba(9,63,113,.45), transparent 48%),
         #020812;
     }
 
     .final h2 {
-      font-size: clamp(38px, 5vw, 64px);
       margin-bottom: 20px;
+      font-size: clamp(38px, 5vw, 64px);
     }
 
     .final p {
@@ -633,12 +557,12 @@
 
     footer {
       padding: 35px 7%;
-      border-top: 1px solid rgba(217,168,78,.18);
-
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 20px;
 
+      border-top: 1px solid rgba(217,168,78,.18);
       color: #87919d;
       font-size: 12px;
     }
@@ -649,34 +573,76 @@
     }
 
     /* =========================
-       TABLET / HANDY
+       TABLET
     ========================= */
 
-    @media (max-width: 950px) {
-
-      .nav {
-        grid-template-columns: 1fr;
-        height: auto;
-        padding: 22px;
+    @media (max-width: 1050px) {
+      .nav-inner {
         gap: 18px;
+        padding: 0 20px;
+      }
+
+      .nav-menu {
+        gap: 15px;
+      }
+
+      .nav-menu a {
+        font-size: 10px;
+      }
+
+      .nav-button {
+        padding: 10px 13px;
+        font-size: 9px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-right {
+        grid-column: 1 / -1;
+        justify-self: center;
+        max-width: 520px;
+        padding: 25px 0 0;
+        border-left: 0;
+        border-top: 1px solid var(--gold);
+        text-align: center;
+      }
+    }
+
+    /* =========================
+       HANDY
+    ========================= */
+
+    @media (max-width: 800px) {
+      .nav-inner {
+        padding: 18px 5%;
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
       .brand {
-        grid-row: 1;
-        font-size: 31px !important;
+        width: 100%;
+        margin: 0;
+        text-align: center;
+        font-size: 32px;
       }
 
-      .nav-left,
-      .nav-right {
-        justify-content: center;
+      .nav-menu {
+        width: 100%;
         flex-wrap: wrap;
-        gap: 15px;
+        justify-content: center;
+        gap: 13px 18px;
+      }
+
+      .nav-button {
+        margin-top: 2px;
       }
 
       .hero {
         grid-template-columns: 1fr;
+        padding: 68px 7%;
         text-align: center;
-        padding: 80px 8%;
       }
 
       .hero-left {
@@ -685,8 +651,8 @@
       }
 
       .hero h1,
-      .hero-copy,
-      .hero-lead {
+      .hero-lead,
+      .hero-copy {
         margin-left: auto;
         margin-right: auto;
       }
@@ -697,24 +663,15 @@
       }
 
       .hero-center {
-        min-height: 380px;
+        min-height: 360px;
       }
 
       .hero-right {
-        justify-self: center;
-        border-left: 0;
-        border-top: 1px solid var(--gold);
-        padding: 30px 0 0;
+        grid-column: auto;
       }
 
-      .journey-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .offer-grid {
-        grid-template-columns: 1fr;
-      }
-
+      .journey-grid,
+      .offer-grid,
       .community,
       .about {
         grid-template-columns: 1fr;
@@ -730,19 +687,25 @@
 
       footer {
         flex-direction: column;
-        gap: 20px;
         text-align: center;
       }
     }
 
     @media (max-width: 550px) {
-
       .hero {
-        padding: 65px 6%;
+        padding: 58px 6%;
       }
 
       .hero h1 {
-        font-size: 42px;
+        font-size: 40px;
+      }
+
+      .hero-lead {
+        font-size: 21px;
+      }
+
+      .hero-copy {
+        font-size: 16px;
       }
 
       .hero-center {
@@ -757,37 +720,41 @@
         padding: 70px 8%;
       }
     }
-
   </style>
 </head>
 
 <body>
 
   <!-- NAVIGATION -->
-
   <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#">ReSoul</a>
 
-    <div class="nav-left">
-      <a href="#weg">Der Weg</a>
-      <a href="#angebote">Readings</a>
+      <div class="nav-menu">
+        <a href="#">Home</a>
+        <a href="#angebote">Readings</a>
+        <a href="#angebote">1:1 Session</a>
+        <a href="#community">Community</a>
+        <a href="#about">Über mich</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+
+      <a class="nav-button" href="#weg">Deinen Weg beginnen →</a>
     </div>
-
-    <a class="brand" href="#">ReSoul</a>
-
-    <div class="nav-right">
-      <a href="#community">Community</a>
-      <a href="#about">Über mich</a>
-    </div>
-
   </nav>
 
-
   <!-- HERO -->
-
   <header class="hero">
+    <img
+      class="hero-background"
+      src="images/hero-background.png"
+      alt=""
+      aria-hidden="true"
+    >
+
+    <div class="hero-overlay"></div>
 
     <div class="hero-left">
-
       <div class="eyebrow">
         Transformation · Wahrheit · Bewusstsein
       </div>
@@ -813,27 +780,19 @@
       <a href="#weg" class="button">
         Deinen Weg beginnen
       </a>
-
     </div>
 
-
     <div class="hero-center">
-
       <div class="logo-wrap">
-
         <img
           src="images/resoul-logo-neu.png"
           alt="ReSoul"
           class="logo-image"
         >
-
       </div>
-
     </div>
 
-
     <div class="hero-right">
-
       <div class="identity">
         Tiefer<br>
         Klarer<br>
@@ -845,16 +804,11 @@
         Transformation ist kein Ende.
         Sondern ein Zurück zu dir.
       </p>
-
     </div>
-
   </header>
 
-
-  <!-- DER WEG -->
-
+  <!-- DER RESOUL WEG -->
   <section class="journey" id="weg">
-
     <div class="section-label">
       Der ReSoul Weg
     </div>
@@ -870,61 +824,42 @@
       Schutzmechanismen und alten Geschichten längst da ist.
     </p>
 
-
     <div class="journey-grid">
-
       <div class="journey-step">
         <div class="journey-symbol">◌</div>
         <h3>Erkennen</h3>
-        <p>
-          Wahrnehmen, was sich in deinem Leben immer wieder zeigt.
-        </p>
+        <p>Wahrnehmen, was sich in deinem Leben immer wieder zeigt.</p>
       </div>
 
       <div class="journey-step">
         <div class="journey-symbol">𓂀</div>
         <h3>Verstehen</h3>
-        <p>
-          Die tieferen Dynamiken hinter deinen Erfahrungen erkennen.
-        </p>
+        <p>Die tieferen Dynamiken hinter deinen Erfahrungen erkennen.</p>
       </div>
 
       <div class="journey-step">
         <div class="journey-symbol">𓋹</div>
         <h3>Lösen</h3>
-        <p>
-          Alte Bindungen, Muster und Blockaden nicht länger festhalten.
-        </p>
+        <p>Alte Bindungen, Muster und Blockaden nicht länger festhalten.</p>
       </div>
 
       <div class="journey-step">
         <div class="journey-symbol">◇</div>
         <h3>Verkörpern</h3>
-        <p>
-          Erkenntnis nicht nur verstehen, sondern wirklich leben.
-        </p>
+        <p>Erkenntnis nicht nur verstehen, sondern wirklich leben.</p>
       </div>
 
       <div class="journey-step">
         <div class="journey-symbol">∞</div>
         <h3>Verbinden</h3>
-        <p>
-          Dir selbst und anderen aus einem neuen Raum begegnen.
-        </p>
+        <p>Dir selbst und anderen aus einem neuen Raum begegnen.</p>
       </div>
-
     </div>
-
   </section>
 
-
   <!-- TRANSFORMATION -->
-
   <section class="transformation">
-
-    <div class="section-label">
-      ReSoul
-    </div>
+    <div class="section-label">ReSoul</div>
 
     <h2 class="section-title">
       Ein Raum für deine Transformation.
@@ -939,103 +874,61 @@
     <div class="transformation-quote">
       „Remember who you were before the world told you who to be.“
     </div>
-
   </section>
 
-
   <!-- ANGEBOTE -->
-
   <section class="offers" id="angebote">
-
     <div class="offers-head">
-
-      <div class="section-label">
-        Deine Möglichkeiten
-      </div>
+      <div class="section-label">Deine Möglichkeiten</div>
 
       <h2 class="section-title">
         Wo möchtest du tiefer gehen?
       </h2>
 
       <p class="section-text">
-        Unterschiedliche Räume für unterschiedliche Punkte
-        auf deinem Weg.
+        Unterschiedliche Räume für unterschiedliche Punkte auf deinem Weg.
       </p>
-
     </div>
 
-
     <div class="offer-grid">
-
       <article class="offer-card">
-
         <div class="offer-number">01 · READING</div>
-
         <h3>Grundenergien</h3>
-
         <p>
           Ein tiefer Blick auf deine energetischen Grundstrukturen
           und die Dynamiken, die dich prägen.
         </p>
-
-        <a href="#" class="text-link">
-          Mehr erfahren →
-        </a>
-
+        <a href="#" class="text-link">Mehr erfahren →</a>
       </article>
 
-
       <article class="offer-card">
-
         <div class="offer-number">02 · READING</div>
-
         <h3>Essence Reading</h3>
-
         <p>
           Für einen tieferen Blick auf deine Essenz,
           deine inneren Themen und deine Entwicklung.
         </p>
-
-        <a href="#" class="text-link">
-          Mehr erfahren →
-        </a>
-
+        <a href="#" class="text-link">Mehr erfahren →</a>
       </article>
 
-
       <article class="offer-card">
-
         <div class="offer-number">03 · VERBINDUNG</div>
-
         <h3>Paardynamik</h3>
-
         <p>
           Verstehe, was zwischen zwei Menschen wirkt –
           jenseits dessen, was an der Oberfläche sichtbar ist.
         </p>
-
-        <a href="#" class="text-link">
-          Mehr erfahren →
-        </a>
-
+        <a href="#" class="text-link">Mehr erfahren →</a>
       </article>
-
     </div>
-
   </section>
 
-
   <!-- COMMUNITY -->
-
   <section class="community" id="community">
-
     <div class="community-image"></div>
 
     <div class="community-content">
-
-      <div class="section-label">
-        ReSoul Community
-      </div>
+      <div class="section-label">ReSoul Community</div>
 
       <h2 class="section-title">
         Du musst deinen Weg nicht alleine gehen.
@@ -1052,32 +945,21 @@
           Zur Community
         </a>
       </div>
-
     </div>
-
   </section>
 
-
   <!-- ÜBER MICH -->
-
   <section class="about" id="about">
-
     <div class="about-image-wrap">
-
       <img
         src="images/johanna.jpg"
         alt="Johanna von ReSoul"
         class="about-image"
       >
-
     </div>
 
-
     <div class="about-content">
-
-      <div class="section-label">
-        Hinter ReSoul
-      </div>
+      <div class="section-label">Hinter ReSoul</div>
 
       <h2 class="section-title">
         Ich bin Johanna.
@@ -1101,19 +983,12 @@
         in dem du dich wieder daran erinnerst,
         wer du unter all den Schichten längst bist.
       </p>
-
     </div>
-
   </section>
 
-
-  <!-- ABSCHLUSS -->
-
-  <section class="final">
-
-    <div class="section-label">
-      Dein Weg
-    </div>
+  <!-- ABSCHLUSS / KONTAKT -->
+  <section class="final" id="kontakt">
+    <div class="section-label">Dein Weg</div>
 
     <h2>
       Vielleicht beginnt Veränderung<br>
@@ -1128,24 +1003,19 @@
     <a href="#angebote" class="button">
       ReSoul entdecken
     </a>
-
   </section>
 
-
   <!-- FOOTER -->
-
   <footer>
-
-    <div>
-      © 2026 ReSoul · Johanna Hamann
-    </div>
+    <div>© 2026 ReSoul · Johanna Hamann</div>
 
     <div class="footer-links">
       <a href="#">Impressum</a>
       <a href="#">Datenschutz</a>
     </div>
-
   </footer>
 
 </body>
-</html> 
+</html>
+
+
