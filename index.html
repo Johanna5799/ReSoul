@@ -46,53 +46,139 @@
       text-decoration: none;
     }
 
-    /* =========================
-       NAVIGATION
-    ========================= */
+    
+/* ==============================
+   NAVIGATION
+================================ */
 
-    .nav {
-      height: 90px;
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      padding: 0 6%;
-      position: relative;
-      z-index: 20;
+.nav {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  padding: 0 6%;
+  gap: 45px;
 
-      background: rgba(2,8,18,.94);
-      border-bottom: 1px solid rgba(217,168,78,.18);
-    }
+  background: rgba(2, 8, 18, 0.97);
+  border-bottom: 1px solid rgba(217,168,78,.18);
 
-    .nav-left,
-    .nav-right {
-      display: flex;
-      gap: 28px;
-      align-items: center;
-    }
+  position: relative;
+  z-index: 50;
+}
 
-    .nav-right {
-      justify-content: flex-end;
-    }
+.brand {
+  color: var(--gold-light) !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 27px !important;
+  font-weight: normal;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
 
-    .nav a {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #c8cdd4;
-      transition: .25s;
-    }
+  margin-right: auto;
+  white-space: nowrap;
+}
 
-    .nav a:hover {
-      color: var(--gold-light);
-    }
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 27px;
+}
 
-    .brand {
-      color: var(--gold-light) !important;
-      font-size: 34px !important;
-      letter-spacing: 1px !important;
-      text-transform: none !important;
-      text-align: center;
-    }
+.nav-menu a {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: #e1e3e6;
+  white-space: nowrap;
+
+  transition: .25s;
+}
+
+.nav-menu a:hover {
+  color: var(--gold-light);
+}
+
+.nav-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 20px;
+
+  border: 1px solid rgba(240,206,130,.65);
+  border-radius: 30px;
+
+  color: var(--cream);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  transition: .25s;
+}
+
+.nav-button:hover {
+  background: var(--gold-light);
+  color: #07101b;
+}
+
+
+/* TABLET */
+
+@media (max-width: 1050px) {
+
+  .nav {
+    gap: 25px;
+    padding: 0 4%;
+  }
+
+  .nav-menu {
+    gap: 17px;
+  }
+
+  .nav-menu a {
+    font-size: 11px;
+  }
+
+  .nav-button {
+    padding: 11px 15px;
+    font-size: 10px;
+  }
+}
+
+
+/* HANDY */
+
+@media (max-width: 800px) {
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    padding: 18px 5%;
+    gap: 18px;
+  }
+
+  .brand {
+    width: 100%;
+    text-align: center;
+    margin-right: 0;
+    font-size: 31px !important;
+  }
+
+  .nav-menu {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px 20px;
+  }
+
+  .nav-button {
+    margin-top: 3px;
+  }
+
 
     /* =========================
        HERO
